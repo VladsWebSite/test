@@ -1,0 +1,215 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+:root {
+  --panel-background: #FFFFFF;
+  --body-background: #EEEEEE;
+  --text-color: #111111;
+  --accent-color: #ffa600;
+  --valid-input: #fff7e7;
+  --filter-input: brightness(97%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Montserrat";
+  background-repeat: no-repeat;
+  line-height: 100%;
+  color: var(--text-color);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  background: var(--body-background);
+  animation: fade-in 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--panel-background);
+}
+
+*::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--panel-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.register section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register form {
+  max-width: 400px;
+  padding: 16px;
+  height: 100%;
+}
+.register h1 {
+  position: absolute;
+  top: 20px;
+  font-size: 24px;
+  font-weight: 800;
+}
+.register label {
+  font-weight: 600;
+  font-size: 20px;
+}
+.register input {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px 50px;
+  border-radius: 15px;
+  outline-color: var(--accent-color);
+  margin: 10px 0;
+}
+.register input:focus {
+  filter: var(--filter-input);
+}
+.register input:valid {
+  background: var(--valid-input);
+}
+.register input[type=text], .register [type=tel], .register [type=password], .register [type=email] {
+  width: 100%;
+}
+.register .btn-father {
+  display: flex;
+}
+.register .next-btn, .register .previous-btn, .register .submit-btn {
+  display: block;
+  width: 49%;
+  height: 60px;
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.register .next-btn, .register .submit-btn {
+  color: var(--panel-background);
+  background: var(--accent-color);
+  border: solid 2px var(--accent-color);
+  margin-left: auto;
+  transition-duration: 0.5s;
+}
+.register .previous-btn {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  margin-right: auto;
+  transition-duration: 0.5s;
+}
+.register .previous-btn:hover {
+  background: var(--accent-color);
+  color: var(--panel-background);
+  transition-duration: 0.5s;
+}
+.register .previous-btn:hover ~ .next-btn, .register .previous-btn:hover ~ .submit-btn {
+  color: var(--accent-color);
+  background: none;
+  transition-duration: 0.5s;
+}
+.register .progress {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  max-width: 400px;
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+}
+.register .progress p {
+  width: 16px;
+  height: 16px;
+  background-color: var(--panel-background);
+  border-radius: 100%;
+}
+.register .progress p.level {
+  background-color: var(--accent-color);
+}
+.register .group {
+  position: relative;
+}
+.register .firstname, .register .lastname, .register .login, .register .email, .register .phone, .register .password, .register .password2, .register .eye, .register .eye2 {
+  position: absolute;
+}
+.register .firstname {
+  top: 44px;
+  left: 8px;
+}
+.register .lastname {
+  top: 148px;
+  left: 8px;
+}
+.register .login {
+  top: 257px;
+  left: 12px;
+}
+.register .email {
+  top: 48px;
+  left: 12px;
+}
+.register .phone {
+  top: 154px;
+  left: 14px;
+}
+.register .password {
+  top: 47px;
+  left: 11px;
+}
+.register .password2 {
+  top: 151px;
+  left: 11px;
+}
+.register .eye {
+  display: none;
+  background: none;
+  top: 48px;
+  right: 8px;
+}
+.register .eye2 {
+  display: none;
+  background: none;
+  top: 152px;
+  right: 8px;
+}
+.register svg {
+  z-index: 100;
+  fill: var(--accent-color);
+}
+.register .step {
+  display: none;
+}
+.register .active, .register .on {
+  display: block;
+}
